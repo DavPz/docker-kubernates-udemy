@@ -1,6 +1,7 @@
 package org.dpugliese.springcloud.msvc.cursos.services;
 
-import org.dpugliese.springcloud.msvc.cursos.entity.Curso;
+import org.dpugliese.springcloud.msvc.cursos.models.Usuario;
+import org.dpugliese.springcloud.msvc.cursos.models.entity.Curso;
 
 import java.util.List;
 import java.util.Optional;
@@ -14,5 +15,9 @@ public interface CursoService {
     Curso guardar(Curso curso);
 
     void eliminar(Long id);
+
+    Optional<Usuario> asignarUsuario(Usuario usuario, Long cursoId );
+    Optional<Usuario> crearUsuario(Usuario usuario, Long cursoId);
+    Optional<Usuario> eliminarUsuario(Usuario usuario, Long cursoId);
 
 }
