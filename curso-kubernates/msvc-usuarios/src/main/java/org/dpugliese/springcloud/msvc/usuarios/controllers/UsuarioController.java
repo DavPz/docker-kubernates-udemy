@@ -82,6 +82,11 @@ public class UsuarioController {
         return ResponseEntity.noContent().build();
     }
 
+    @GetMapping("/usuarios-por-curso")
+    public ResponseEntity<?> obtenerAlumnosPorCurso(@RequestParam List<Long> ids) {
+        return ResponseEntity.ok(usuarioService.listarPorIds(ids));
+    }
+
     private HashMap<String, String> populateErrors(BindingResult result) {
         HashMap<String, String> errores = new HashMap<>();
         result.getFieldErrors().forEach(err -> {
